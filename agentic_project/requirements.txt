@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+apscheduler
+httpx
+cachetools
+pytz
+pydantic
+python-dotenv
+google-cloud-firestore
+google-cloud-aiplatform
+vertexai
