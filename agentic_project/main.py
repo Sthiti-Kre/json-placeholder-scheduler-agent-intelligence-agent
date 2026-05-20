@@ -102,6 +102,7 @@ scheduler = BackgroundScheduler(timezone=tz)
 
 def _register_jobs():
     scheduler.add_job(job_1, CronTrigger(hour=12, minute=40, timezone=tz), id='job_1_12:40', replace_existing=True, name='Json Place holder data @ 12:40')
+    scheduler.add_job(job_1, CronTrigger(hour=14, minute=15, timezone=tz), id='job_1_14:15', replace_existing=True, name='Json Place holder data @ 14:15')
     scheduler.add_job(job_1, CronTrigger(hour=17, minute=1, timezone=tz), id='job_1_17:01', replace_existing=True, name='Json Place holder data @ 17:01')
     logger.info("Registered %d scheduled job(s)", len(scheduler.get_jobs()))
 

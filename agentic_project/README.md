@@ -6,7 +6,7 @@ This agent fetches data from 1 API source(s) on a schedule and stores the result
 ## Scheduled Jobs
 | # | Name | URL | Times (Asia/Kolkata) | Auth |
 |---|------|-----|--------------------|------|
-| 1 | Json Place holder data | https://json-placeholder.mock.beeceptor.com/posts | 12:40, 17:01 | none |
+| 1 | Json Place holder data | https://json-placeholder.mock.beeceptor.com/posts | 12:40, 14:15, 17:01 | none |
 
 ## Endpoints
 | Endpoint | Method | Description |
