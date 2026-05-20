@@ -85,8 +85,8 @@ def job_1():
             "httpStatus": response.status_code,
         }
         if _db:
-            _db.collection('JSON-placeholder-data').add(record)
-            logger.info("[%s] Saved to Firestore collection '%s'", 'Json Place holder data', 'JSON-placeholder-data')
+            _db.collection('scheduler_data').add(record)
+            logger.info("[%s] Saved to Firestore collection '%s'", 'Json Place holder data', 'scheduler_data')
         # Also cache in memory
         _cache['job_1'] = record
     except httpx.TimeoutException:
@@ -101,8 +101,9 @@ def job_1():
 scheduler = BackgroundScheduler(timezone=tz)
 
 def _register_jobs():
-    scheduler.add_job(job_1, CronTrigger(hour=12, minute=40, timezone=tz), id='job_1_12:40', replace_existing=True, name='Json Place holder data @ 12:40')
     scheduler.add_job(job_1, CronTrigger(hour=14, minute=15, timezone=tz), id='job_1_14:15', replace_existing=True, name='Json Place holder data @ 14:15')
+    scheduler.add_job(job_1, CronTrigger(hour=16, minute=20, timezone=tz), id='job_1_16:20', replace_existing=True, name='Json Place holder data @ 16:20')
+    scheduler.add_job(job_1, CronTrigger(hour=16, minute=40, timezone=tz), id='job_1_16:40', replace_existing=True, name='Json Place holder data @ 16:40')
     scheduler.add_job(job_1, CronTrigger(hour=17, minute=1, timezone=tz), id='job_1_17:01', replace_existing=True, name='Json Place holder data @ 17:01')
     logger.info("Registered %d scheduled job(s)", len(scheduler.get_jobs()))
 
